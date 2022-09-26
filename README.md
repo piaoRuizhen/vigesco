@@ -2,7 +2,7 @@
 <ul>
   <li>개인 포트폴리오 사이트</li>
   <li>사회생활과 코로나 블루등으로 심신이 지친 사람들을 위해 힐링 할 수 있는 사이트를 만들어보고자 제작하게된 사이트 입니다.</li>
-  <li>css, java script, jsp, java, spring 을 사용하여 만든 프로젝트입니다.<br></li>
+  <li>css, java script, jsp, mysql, java, spring 을 사용하여 만든 프로젝트입니다.<br></li>
 </ul>
 <hr>
 
