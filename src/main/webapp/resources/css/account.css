@@ -1,0 +1,31 @@
+form {
+    width: 600px;
+    margin: 20px auto;
+    background-color: #eee;
+    padding: 10px;
+  }
+  
+  div {
+    font-size: 15px;
+    margin: 5px;
+  }
+  
+  input,
+  select {
+    display: inline-block;
+    margin-left: 5px;
+    padding: 2px;
+  }
+  
+  #yy,
+  #dd {
+    width: 60px;
+  }
+  
+  .join_btn {
+    text-align: center;
+  }
+  
+  .join_btn button {
+    background-color: #cecece;
+  }

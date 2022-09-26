@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="org.pyj.dao.BoardDao">
+	  <insert id="BoardWrite">
+	  
+	  <selectKey keyProperty="bno" resultType="int" order="BEFORE">
+	  	select max(bno)+1 bno from tbl_board;
+	  </selectKey>
+	  
+	  
+	  
+		insert into tbl_board(bno,title, content, writer, id)
+		values(#{bno},#{title},#{content},#{writer},#{id})
+	  </insert>
+	  
+	  <select id="BoardList" resultType="org.pyj.model.BoardDTO">
+	  
+	  	select *
+			from(
+				select @rownum:=@rownum+1 as rownum, b.*
+				from (select @rownum:=0) as tmp, tbl_board b
+				<if test="type !=null">
+				  	<choose>
+				  		<when test="type == 't'.toString()">
+				  			WHERE title like concat('%',#{keyword},'%')
+				  		</when>
+				  		
+				  		<when test="type == 'w'.toString()">
+				  			WHERE writer like concat('%',#{keyword},'%')
+				  		</when>
+				  		<otherwise>
+						  	WHERE title like concat('%',#{keyword},'%')
+						  	or writer like concat('%',#{keyword},'%')
+				  		</otherwise>
+				  	</choose>
+		 		</if>
+				 order by bno desc
+			    ) as boardList
+		<![CDATA[
+			where rownum > (#{pagenum} - 1) * #{amount} and rownum <= #{pagenum} * #{amount}
+		]]>
+	  	
+	  </select>
+	  
+	
+	  
+	  <select id="BoardDetail" resultType="org.pyj.model.BoardDTO">
+	  	select * from tbl_board where bno=#{bno} 
+	  </select>
+	  
+	  <update id="BoardModify">
+	  	update tbl_board
+	  	set title=#{title},
+	  		content=#{content}
+	  	where bno=#{bno}
+	  </update>
+	  
+	  <delete id="BoardRemove">
+	  	delete from tbl_board where bno=#{bno}
+	  </delete>
+	  
+	  <update id="BoardCntup">
+	  	update tbl_board
+		set count=count+1
+		where bno=#{bno}
+	  </update>
+	  
+	  <select id="getTotalCount" resultType="int">
+	  	SELECT count(*)
+		FROM tbl_board
+		<if test="type !=null">
+		  	<choose>
+		  		<when test="type == 't'.toString()">
+		  			WHERE title like concat('%',#{keyword},'%')
+		  		</when>
+		  		
+		  		<when test="type == 'w'.toString()">
+		  			WHERE writer like concat('%',#{keyword},'%')
+		  		</when>
+		  		<otherwise>
+				  	WHERE title like concat('%',#{keyword},'%')
+				  	or writer like concat('%',#{keyword},'%')
+		  		</otherwise>
+		  	</choose>
+		 </if>
+	  </select>
+	  
+	  <select id="attachList" resultType="org.pyj.model.AttachFileDTO">
+	  	select * from tbl_attach where bno=#{bno}
+	  </select>
+	  
+	  
+	  
+  </mapper>

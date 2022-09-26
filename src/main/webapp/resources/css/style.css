@@ -1,0 +1,1069 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 20px;
+    color: #222;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+img{
+    vertical-align: top;
+    border: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*초기화 끝!-------------------------------------*/
+
+
+body{
+    position: relative;
+    background-color: #ececec;
+}
+
+#wrap{
+    min-width: 1440px;
+}
+
+
+
+#wrap{
+    position: relative; 
+    width: 100%;
+    min-width: 1440px;
+    /*height: 100vh;*/
+}
+
+#header{
+    position:absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 95px;
+    z-index: 10000;
+}
+.headerIn{
+    position: relative;
+    width: 1400px;
+    height: 95px;
+    margin: 0 auto;
+}
+
+.logo a{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    background-image: url(/resources/img/vigesco_logo.png);
+    background-size: 100px 100px;
+    text-indent: -99999px;
+    z-index: 20000;
+}
+
+.gnb{
+    /* position: absolute;
+    top: 35px;
+    left: 0; */
+    position: relative;
+    height: 230px;
+    z-index: 100;
+    width: 1400px;
+}
+
+.gnb-in{
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.gnb ul{
+    display: flex;
+    margin-left: 100px;
+}
+
+.gnb ul li{
+    margin-left: 70px;
+    position: relative;
+}
+
+.gnb-in>ul>li>a{
+    display: block;
+    line-height: 50px;
+    color: #fff;
+    opacity: 0.7;
+    font-size: 20px;
+    /* background-color: #888; */
+    height: 50px;
+    padding-right: 60px;
+    padding-top: 25px;
+}
+
+.gnb-in>ul>li>a:hover{
+    color: rgb(201, 121, 201);
+}
+.gnb .gnbSub{
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    height: 200px;
+    width: 100%;
+}
+
+/* .gnb .gnbSub li{
+    width: 200px;
+} */
+
+.gnb .gnbSub a{
+    display: block;
+    font-size: 14px;
+    color: #888;
+    line-height: 30px;
+    font-size: 16px;
+}
+
+.gnb .gnbSub a:hover{
+    color: rgb(218, 180, 218);
+}
+
+.gnbBg{
+    position: absolute;
+    top: 70px;
+    left: 150px;
+    width: 960px;
+    background-color: #222;
+    height: 180px;
+    display: none;
+    opacity: 0.1;
+}
+.gnb-in>ul>li:last-child{
+    width: 150px;
+}
+.gnb-in>ul>li:last-child>sub{
+    padding-left: 20px;
+}
+
+
+
+/* .gnb ul li a{
+    font-size: 20px;
+    font-weight: 400;
+    color: #eee;
+}
+
+.gnb ul li a:hover{
+    color: rgb(218, 180, 218);
+}
+
+.gnbSub{
+    width: 100px;
+    height: 150px;
+    background-color: #ccc;
+    display: none;
+    position: relative;
+}
+
+.gnbList{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.gnbSub li{
+    width: 100px;
+    
+} */
+
+
+.hR{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    z-index: 20000;
+}
+
+
+.hR>li a:hover{
+    color: rgb(218, 180, 218);
+}
+
+.hR li a{
+    color: #eee;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+
+.hR>li::before{
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background-color: #ccc;
+    margin: 0 5px;
+}
+.hR>li:first-child::before{
+    display: none;
+}
+
+.hR .arr::after{
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-image: url(/resources/img/down_arrow.png);
+    background-size: 10px auto;
+    vertical-align: top;
+    margin-top: 8px;
+    margin-left: 6px;
+}
+
+
+.myList{
+    margin-left: 15px;
+    width: 80px;
+    height: 150px;
+    /* background-color: transparent; */
+    display: none;
+    /* opacity: 0.1; */
+}
+.myList a{
+    line-height: 23px;
+    color: #fff;
+    opacity: 0.5;
+}
+
+
+
+/* 헤더 끝!!!!! */
+
+.sidebar{
+    position: fixed;
+    right: 3%;
+    bottom: 22%;
+    z-index: 20000;
+}
+
+.sidebar li{
+    width: 20px;
+    height: 20px;
+    margin-top: 20px;
+    background-color: transparent;
+}
+
+.sidebar li a{
+    display: block;
+    background-color: transparent;
+    text-indent: -9999px;
+    opacity: 0.5;
+    transition: 0.2s;
+    background-image: url(/resources/img/heart.png);
+    background-size: 20px;
+}
+
+
+.sidebar a.active{
+    opacity: 1;
+    background-color: transparent;
+    border-radius: 50%;   
+}
+
+
+html[data-current-page-index="0"] .sidebar {
+    transform:translateY(0);
+}
+
+
+
+
+
+
+.bgVideo{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+}
+
+.bgBlack{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.bgVideo .prev-arrow{
+    position: absolute;
+    top: 50%;
+    top: 0;
+    z-index: 9;
+
+}
+
+
+
+
+
+
+.bgWrap1{
+    position: relative;
+}
+
+.bgWrap2{
+    position: relative;
+}
+
+.bgWrap3{
+    position: relative;
+}
+
+.bgVideo1{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bgVideo2{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bgVideo3{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bgText1{
+    font-family: 'Stylish', sans-serif;
+    font-size: 40px;
+    font-style: oblique;
+    line-height: 50px;
+    letter-spacing: 2px;
+    color: rgba(204, 204, 204, 0.6);
+    position: absolute;
+    top: 250px;
+    left: 250px;
+}
+
+.bgText2{
+    font-family: 'Stylish', sans-serif;
+    font-size: 40px;
+    font-style: oblique;
+    line-height: 50px;
+    letter-spacing: 2px;
+    color: rgba(204, 204, 204, 0.6);
+    position: absolute;
+    top: 250px;
+    right: 250px;
+}
+
+.bgText3{
+    font-family: 'Stylish', sans-serif;
+    font-size: 40px;
+    font-style: oblique;
+    line-height: 50px;
+    letter-spacing: 2px;
+    color: rgba(204, 204, 204, 0.6);
+    position: absolute;
+    top: 250px;
+    left: 250px;
+}
+
+#row1>.msImg1 img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+
+
+
+
+.slider .slick-arrow {
+    position: absolute;
+    top: 50%;
+    margin: -20px 0px 0px 0px;
+    z-index: 10;
+    font-size: 0;
+    width: 50px;
+    height: 50px;
+  }
+  .slider .slick-arrow.slick-prev {
+    left: 30px;
+    background: url(/resources/img/left-arrow.png) 0 0 / 100% no-repeat;
+    opacity: 0.3;
+    
+  }
+  .slider .slick-arrow.slick-next {
+    right: 30px;
+    background: url(/resources/img/right-arrow.png) 0 0 / 100% no-repeat;
+    opacity: 0.3;
+  }
+
+
+/* row1 끝!!!!!!!!!!!!!!!! */
+
+
+
+#row2{
+    width: 1400px;
+    position: relative;
+}
+
+#row2 h1{
+    position: absolute;
+    top: 15%;
+    left: 16%;
+    line-height: 70px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-shadow: 4px 2px 2px gray;
+    color: #222;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 70px;
+    font-weight: 600;
+
+
+
+}
+
+#row2 h2{
+    position: absolute;
+    top: 12%;
+    left: 13%;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 30px;
+    line-height: 40px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-shadow: 2px 2px 2px gray;
+    color: #222;
+}
+
+.bookBox1{
+    position: relative;
+    width: 100vw;
+    height: 50vh;
+    background-color: rgb(218, 180, 218);
+    background-image: url(../img/backGround3.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+h3{
+    font-size: 40px;
+    font-family: 'Noto Serif KR', serif;
+    padding: 20px ;
+    color: #222;
+}
+
+.bookTitle1{
+    position: absolute;
+    font-size: 35px;
+    top: 10%;
+    right: 30%;
+    text-shadow: 2px 2px 2px rgb(15, 15, 15);
+    color: #333;
+}
+
+.bookText1{
+    position: absolute;
+    top: 30%;
+    right: 20%;
+    line-height: 30px;
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 400;
+    color: #444;
+    
+}
+#row2 span{
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+}
+
+.bookBg1{
+    position: absolute;
+    top: 8%;
+    left: 26%;
+    width: 200px;
+    height: 200px;
+    background-color: #111;
+    opacity: 0.6;
+}
+
+.bookImg1{
+    position: absolute;
+    bottom: 25%;
+    left: 28%;
+    width: 280px;
+    height: 280px;
+    z-index: 1;
+
+}
+
+.bookImg1 img{
+    display: block;
+    width: 100%;
+}
+
+.bookBox2{
+    position: relative;
+    width: 100vw;
+    height: 50vh;
+    background-color: rgb(196, 135, 196);
+    background-image: url(../img/backGround1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.bookTitle2{
+    position: absolute;
+    font-size: 35px;
+    top: 20%;
+    left: 26%;
+    text-shadow: 2px 2px 2px rgb(15, 15, 15);
+    color: #333;
+}
+
+.bookText2{
+    position: absolute;
+    bottom: 18%;
+    left: 24%;
+    line-height: 40px;
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 400;
+    color: #444;
+}
+
+.bookBg2{
+    position: absolute;
+    bottom: 10%;
+    right: 24%;
+    width: 200px;
+    height: 200px;
+    background-color: #222;
+    opacity: 0.6;
+}
+
+.bookImg2{
+    position: absolute;
+    top: -8%;
+    right: 26%;
+    width: 280px;
+    height: 280px;
+}
+
+.bookImg2 img{
+    width: 100%;
+}
+
+
+.row2viewMore{
+    position: absolute;
+    top: 6%;
+    right: -20%;
+}
+
+.row2viewMore a{
+    display: block;
+    width: 100%;
+    color: #222;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.row2viewMore a span{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+    margin-right: 3px;
+}
+
+
+/* row2 끝!!!! */
+
+.viewMore{
+    position: absolute;
+    top: 50px;
+    right: 0;
+}
+
+.viewMore a{
+    color: #222;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.viewMore a span{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+    margin-right: 3px;
+}
+
+
+
+
+/**
+ *  Progress Bar
+ */
+ .progress {
+    display: block;
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    
+    background-color: #f5f5f5;
+    background-image: linear-gradient(to right, rgb(201, 121, 201), rgb(172, 105, 172));
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    
+    transition: background-size .4s ease-in-out;
+    
+  }
+  
+  /**
+   *  Demo Styles from the Slick Slider
+   *  website
+   */
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+
+  
+#row3{
+    height: 100vh;
+    margin: 0 auto;
+    /* background-color: #EFE5F8; */
+    background-image: url(/resources/img/backGround3.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.row3In{
+    width: 1400px;
+    margin: 0 auto;
+    margin-bottom: 0;
+    position: relative;
+}
+#row3 h1{
+    position: absolute;
+    top: 100px;
+    right: 43%;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #222;
+}
+
+#row3 h2{
+    position: absolute;
+    top: 50px;
+    right: 47%;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #777;
+
+}
+
+.bestSeller ul{
+    display: flex;
+    justify-content: space-between;
+}
+.bestSeller li{
+    padding-top: 60%;
+    width: 800px;
+    height: 700px;
+}
+
+.bestSeller li img{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.bestSeller h3{
+    width: 300px;
+    height: 10px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #222;
+    margin-left: -10px;
+}
+.bestSeller h3:hover{
+    display: block;
+    text-decoration: underline;
+}
+.bestSeller h3:nth-child(2){
+    margin-left: 60px;
+}
+
+.bestSeller p{
+    margin-left: 130px;
+    font-size: 15px;
+    color: #777;
+}
+
+.bestSeller .slick-slide{
+    padding: 0 20px;
+}
+
+.bestSeller .slick-arrow {
+    position: absolute;
+    top: 60%;
+    margin: -20px 0px 0px 0px;
+    z-index: 10;
+    font-size: 0;
+    width: 60px;
+    height: 60px;
+  }
+  .bestSeller .slick-arrow.slick-prev {
+    left: -70px;
+    background: url(/resources/img/leftArrow.png) 0 0 / 100% no-repeat;
+    
+  }
+  .bestSeller .slick-arrow.slick-next {
+    right: -70px;
+    background: url(/resources/img/rightArrow.png) 0 0 / 100% no-repeat;
+    opacity: 0.3;
+  }
+.row3In .progress{
+    margin-top: 150px;
+}
+
+
+/* row3 끝!!!!!!!!! */
+
+
+
+
+
+#row4{
+    /* background-color: #E5D3F2; */
+    background-image: url(/resources/img/backGround1.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.row4In{
+    width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+.row4In h1{
+    font-family: 'Noto Serif KR', serif;
+    font-size: 40px;
+    font-weight: 600;
+    position: absolute;
+    top: 60px;
+    right: 40%;
+}
+
+.row4In h2{
+    position: absolute;
+    top: 20px;
+    right: 52%;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #777;
+}
+  
+
+[class^="swiper-button-"], .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet::before {
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+  }
+  
+  *, *:before, *:after {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .swiper-container {
+    width: 1400px;
+    margin: 0 auto;
+    height: 50vw;
+    -webkit-transition: opacity .6s ease;
+    transition: opacity .6s ease;
+    padding: 10% 10%;
+    }
+  
+
+  
+  .swiper-container:hover .swiper-button-prev,
+  .swiper-container:hover .swiper-button-next {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .swiper-slide {
+    background-color: rgb(196, 135, 196);
+    }
+  
+  .swiper-slide .content {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 50%;
+    padding-left: 5%;
+    color: #fff;
+  }
+  
+  .swiper-slide .content .title {
+    font-size: 2.6em;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .swiper-slide .content .caption {
+    display: block;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  
+  [class^="swiper-button-"] {
+    width: 44px;
+    opacity: 0;
+    visibility: hidden;
+    color: #ececec;
+  }
+  
+  .swiper-button-prev {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  
+  .swiper-button-next {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+  
+  .swiper-pagination-bullets{
+      margin-bottom: 5%;
+  }
+
+
+  .swiper-pagination-bullet { 
+      width: 12px; 
+      height: 12px; 
+      background: transparent; 
+      border: 1px solid rgb(201, 121, 201); 
+      opacity: 1; 
+    }
+  .swiper-pagination-bullet-active { 
+      width: 40px; 
+      transition: width .5s; 
+      border-radius: 5px; 
+      background: rgb(201, 121, 201); 
+      border: 1px solid transparent; 
+    }
+
+
+    /* row4 끝!! */
+
+
+#footer{
+    width: 100vw;
+    height: 50vh;
+    background-color: #444;
+    position: relative;
+}
+.footerIn{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 50px 0;
+    display: flex;
+    position: relative;
+}
+
+/* .ft_left{
+    position: relative;
+} */
+
+.ft_left .ft_logo{
+    /* position: absolute;
+    top: 0;
+    left: 50px; */
+    width: 200px;
+    height: 200px;
+    position: relative;
+    left: 50px;
+
+}
+
+.ft_left .ft_logo img{
+    width: 100%;
+}
+
+.ft_sns{
+    position: absolute;
+    bottom: 50px;
+    left: -20px;
+    margin-left: 100px;
+}
+.ft_sns h3{
+    margin-bottom: 30px;
+}
+.ft_sns ul{
+    display: flex;
+}
+.ft_sns li{
+    margin-right: 15px;
+}
+.ft_sns a{
+    display: block;
+    width: 45px;
+    height: 45px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #eee;
+    border-radius: 50%;
+    text-indent: -9999px;
+
+}
+
+.ft_yt a{
+    background-image: url(/resources/img/ft_youtube.svg);
+    background-size: 60% auto;
+}
+.ft_ins a{
+    background-image: url(/resources/img/ft_instagram.svg);
+    background-size: 50% auto;
+}
+.ft_fb a{
+    background-image: url(/resources/img/ft_facebook.svg);
+    background-size: 30% auto;
+}
+
+
+
+
+.ft_right{
+    padding-top: 3%;
+    display: flex;
+}
+
+.ft_right h3{
+    color: #ececec;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.footerIn p{
+    color: #ddd;
+    margin-top: 10px;
+}
+.ft_right a{
+    color: #bbb;
+    font-size: 15px;
+}
+.footerIn a:hover{
+    text-decoration: underline;
+}
+
+.ft_right div{
+    margin-left: 80px;
+    border-left: 1px solid #999;
+    padding-left: 10px;
+    height: 230px;
+}
+
+.ft_right div p {
+    width: 150px;
+    padding-left: 10px;
+}
+
+.footer_bottom{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    /* padding-top: 50px; */
+    background-color: #222;
+}
+
+.footer_bottom p{
+    padding-top: 15px;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: normal;
+    letter-spacing: .05em;
+    color: #fff;
+
+}
+
+.join a{
+    display: inline-block;
+    padding: 10px 30px;
+    color: rgb(201, 121, 201);
+    border: 1px solid rgb(172, 105, 172);
+    border-radius: 5px;
+    font-size: 20px;
+    transition: all .3s ease;
+    margin-left: 50px;
+    margin-top: 30px;
+    /* background-color: rgb(218, 180, 218); */
+}
+.join a:hover{
+    display: inline-block;
+    vertical-align:middle;
+    transition: all .3s ease;
+    background-color: rgb(218, 180, 218);
+    color: #fff;
+}
+
+#top_btn{
+    position:fixed;
+    bottom:5%;
+    right:2%;
+    display:none;
+    width:50px;
+    height:50px;
+    border-radius:5px;
+    text-indent:-9999px;
+    background:url("/resources/img/up-arrow.png") center center no-repeat; 
+    overflow:hidden;opacity:0.8;z-index: 999;
+    background-size: 30px;
+}
+

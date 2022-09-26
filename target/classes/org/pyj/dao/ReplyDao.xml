@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="org.pyj.dao.ReplyDao">
+  	<insert id="add">
+  		insert into tbl_reply(reply,replyer,bno)
+		value(#{reply},#{replyer},#{bno})
+  	</insert>
+  	
+  	<select id="list" resultType="org.pyj.model.ReplyDTO">
+  		SELECT * 
+  		FROM pyj.tbl_reply 
+  		where bno=#{bno}
+  		order by rno desc
+  	</select>
+  	
+  	<select id="detail" resultType="org.pyj.model.ReplyDTO">
+  		SELECT *
+  		FROM tbl_reply
+  		where rno=#{rno}
+  	</select>
+  	
+  	<update id="modify">
+	  	update tbl_reply
+		set reply = #{reply}
+		where rno=#{rno}
+  	</update>
+  	
+  	<delete id="remove">
+  		delete 
+  		from tbl_reply 
+  		where rno=#{rno}
+  	</delete>
+  	  	
+  </mapper>
