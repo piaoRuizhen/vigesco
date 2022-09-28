@@ -79,7 +79,7 @@ function validate() {
        return false;
     }
     if(!checkId.test(userID.value)) {
-      alert("4~12자의 영문 대소문자와 숫자 4~12자리로로만 입력하세요");
+      alert("4~12자의 영문 대소문자와 숫자 4~12자리로만 입력하세요");
       return false;
     }
 
