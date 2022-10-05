@@ -3,7 +3,12 @@
   <li>개인 포트폴리오 사이트</li>
   <li>스트레스에 지친 직장인뿐만 아니라 우울감을 느끼고 있는 모든 사람들에게 힐링이 되고자 만든 웹사이트입니다.</li>
 </ul>
-<hr>
+
+
+<br><br><br>
+<h3>🟡PPT</h3><hr>
+<p>https://drive.google.com/file/d/1LntwerKgfKsDXAkCSwIgQvS69rC5djI4/view?usp=sharing</p>
+
 
 <br><br><br>
 
